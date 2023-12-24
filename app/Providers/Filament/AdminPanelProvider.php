@@ -17,8 +17,6 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Filament\FontProviders\LocalFontProvider;
-use Filament\FontProviders\GoogleFontProvider;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -31,22 +29,16 @@ class AdminPanelProvider extends PanelProvider
             ->font(
                 family: "Exo 2"
             )
-            
-            // 
-            // The commented code bellow is not working either
-            // 
-            
+            // The below code is not working either
             // ->font(
             //     family: "Exo 2",
             //     provider: GoogleFontProvider::class
             // )
-            
             // ->font(
             //     family: "Exo 2",
             //     url: asset('css/fonts.css'),
             //     provider: LocalFontProvider::class
             // )
-
             ->login(\App\Filament\Pages\Auth\Login::class)
             ->colors([
                 'primary' => Color::Amber,
